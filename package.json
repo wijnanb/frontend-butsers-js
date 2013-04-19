@@ -1,0 +1,14 @@
+{
+    "name" : "frontend-butsers-js",
+    "description" : "Trying out Angular.js and Backbone.js",
+    "author" : "VikingCo",
+    "version" : "0.1.0",
+    "dependencies" : {
+        "coffee-script" : "1.6.1",
+        "eco" : "1.1",
+        "express": "3.1.x"
+    },
+    "engines" : {
+        "node":"0.8.x"
+    }
+}
