@@ -19,9 +19,10 @@ server.configure ->
     server.use '/static', express.static path.join(__dirname, '/static')
     server.use express.bodyParser()
     server.use (req, res, next) ->
+        if req.type is 'OPTIONS' then res.send 200
         res.header 'Access-Control-Allow-Origin', config.allowedDomains
         res.header 'Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE'
-        res.header 'Access-Control-Allow-Headers', 'Content-Type'
+        res.header 'Access-Control-Allow-Headers', 'Content-Type,X-Requested-With'
         next()
 
 server.get '/list', (req, res) ->
