@@ -7,10 +7,12 @@ eco = require 'eco'
 nextId = 3
 list = {
     "1": {
-        "test": "1"
+        "id": "1",
+        "msg": "msg1"
     },
     "2": {
-        "test": "2"
+        "id": "2",
+        "msg": "msg2"
     }
 }
 server = express()
@@ -34,6 +36,7 @@ server.get '/list/:id', (req, res) ->
 
 server.post '/list', (req, res) ->
     id = nextId++
+    req.body['id'] = id
     list[id] = req.body
     res.send req.body
 
